@@ -1,0 +1,67 @@
+.bgGrad {
+  background: linear-gradient(
+    318.05deg,
+    #7c4090 26.4%,
+    #52132a 72.85%,
+    #380d1d 100%
+  );
+}
+
+.menu-item.active,
+.menu-item:hover {
+  @apply transition ease-out bg-secondary bg-opacity-60 rounded-lg delay-150;
+  @apply cursor-pointer;
+}
+.menu-item.active {
+  @apply font-semibold;
+}
+
+.bannerMedia:after {
+  content: '';
+  @apply h-full w-full object-cover absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.17)),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) -10.9%,
+      rgba(0, 0, 0, 0) 16.48%,
+      rgba(0, 0, 0, 0) 56.75%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+}
+.banner-heading {
+  font-size: clamp(32px, 5vw, 80px);
+  line-height: 1.1;
+}
+.h1 {
+  font-size: clamp(24px, 4.5vw, 64px);
+  line-height: 1.1;
+}
+.container {
+  @apply mx-auto px-4;
+}
+
+.purple-gradient {
+  background: linear-gradient(
+    318.05deg,
+    #7c4090 26.4%,
+    #52132a 72.85%,
+    #380d1d 100%
+  );
+}
+
+.grid-500 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-410 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(410, 1fr));
+  @media (max-width: 410) {
+    grid-template-columns: 1fr;
+  }
+}

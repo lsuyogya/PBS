@@ -1,0 +1,207 @@
+<!-- npx tailwindcss -i ./src/tailwind.css -o ./src/twOutput.css --watch -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>PBS</title>
+    <link
+      href="./twOutput.css"
+      rel="stylesheet" />
+    <script
+      src="./script.js"
+      defer></script>
+    <link
+      rel="icon"
+      href="./assets/images/favIcon.png"
+      type="image/png" />
+  </head>
+  <body class="flex flex-col min-h-[200lvh]">
+    <header
+      class="py-2 bg-gradient-to-b from-black/60 to-black/0 fixed top-0 w-full z-50 transition-transform duration-300 ease-in-out">
+      <div class="container mx-auto flex flex-wrap justify-between w-full">
+        <div class="logoWrapper">
+          <img
+            src="./assets/images/PBSLogo.svg"
+            alt="" />
+        </div>
+        <div class="menuWrapper flex gap-4 content-center items-center">
+          <a class="menu-item active content-center px-4 py-2 h-max text-white"
+            >Home</a
+          >
+          <a class="menu-item content-center px-4 py-2 h-max text-white"
+            >About</a
+          >
+          <a class="menu-item content-center px-4 py-2 h-max text-white"
+            >Services</a
+          >
+          <a class="menu-item content-center px-4 py-2 h-max text-white"
+            >Contact</a
+          >
+          <img
+            src="./assets/images/ndis.svg"
+            alt="" />
+        </div>
+      </div>
+    </header>
+    <main class="grow">
+      <section class="banner min-h-[100vh] bg-secondary bg-opacity-60 grid">
+        <div class="bannerMedia absolute h-full w-full object-cover">
+          <img
+            src="./assets/images/banner1.png"
+            class="absolute h-full w-full object-cover" />
+        </div>
+        <div
+          class="container z-[1] text-white mx-auto relative h-full align-bottom self-end content-end row-span-full mt-auto">
+          <div class="py-24">
+            <h1 class="banner-heading">
+              We are Passionate, Believing in Transforming Lives Every Day
+            </h1>
+            <p class="text-lg md:text-2xl my-6">
+              Empowering individuals with tailored NDIS support to lead
+              independent, fulfilling lives.
+            </p>
+            <a
+              href="#"
+              class="btn px-4 py-2 bg-primary text-white rounded-lg block max-w-max">
+              Get Started</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="whoWeAre">
+        <div class="container py-12 md:py-24 gap-4 mx-auto grid md:grid-cols-2">
+          <div class="grid-item">
+            <small
+              class="uppercase tracking-wider text-sm md:text-base text-primary font-bold"
+              >About Us</small
+            >
+            <h1 class="h1">Who We Are</h1>
+          </div>
+          <div class="grid-item text-gray-800 space-y-6 text-lg">
+            <p>
+              At Passion Believe Support, we are committed to improving the
+              lives of individuals by offering tailored care under the National
+              Disability Insurance Scheme (NDIS). Located in Adeliade,
+              Australia, our goal is to deliver exceptional support that
+              empowers participants to lead independent, meaningful lives.
+            </p>
+            <p>
+              Whether you require help with everyday tasks, navigating life
+              transitions, or engaging in community activities, our experienced
+              team of healthcare professionals is committed to supporting you in
+              achieving greater independence and improving your quality of life.
+            </p>
+            <a
+              href="#"
+              class="border bg-transparent border-black text-gray-800 px-4 py-2 rounded-lg block max-w-max"
+              title="Learn More About Us">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="whatSeparatesUs bgGrad relative min-h-[100vh]">
+        <img
+          src="./assets/images/Lotus.svg"
+          alt=""
+          class="absolute h-[80%] left-0 bottom-0 invisible md:visible" />
+        <div class="container text-white py-12 md:py-24">
+          <div class="headingWrapper">
+            <small
+              class="uppercase tracking-wider text-sm md:text-base font-bold">
+              Why Choose Us
+            </small>
+            <h1 class="h1">What Sets Us Apart</h1>
+          </div>
+          <div
+            class="contentWrapper md:pl-40 mt-12 grid-500 gap-12 md:gap-y-24">
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/personalizedCare.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Personalized Care
+              </h2>
+              <p class="text-base md:text-lg">
+                We take the time to understand your unique needs and
+                preferences, ensuring you receive tailored support.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/experiencedTeam.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Experienced Team
+              </h2>
+              <p class="text-base md:text-lg">
+                Our skilled professionals are dedicated to providing
+                high-quality care with empathy and respect.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/communityFocus.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Community Focus
+              </h2>
+              <p class="text-base md:text-lg">
+                We are committed to helping you build and maintain strong
+                connections within your community.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/holisticApproach.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Holistic Approach
+              </h2>
+              <p class="text-base md:text-lg">
+                Our services address various aspects of your life, promoting
+                overall well-being and independence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ourServices">
+        <div class="container py-12 md:py-24">
+          <div class="headingWrapper">
+            <small
+              class="uppercase tracking-wider text-sm md:text-base text-primary font-bold"
+              >Our Services</small
+            >
+            <h1 class="h1">Our Area of Specialization</h1>
+            <div class="serviceGrid grid-410"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Footerrrr weee</footer>
+  </body>
+</html>
