@@ -1,0 +1,843 @@
+<!-- npx tailwindcss -i ./src/tailwind.css -o ./src/twOutput.css --watch -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>PBS</title>
+    <link
+      rel="icon"
+      href="./assets/images/favIcon.png"
+      type="image/png" />
+    <link
+      rel="stylesheet"
+      href="./assets/splide/css/splide.min.css" />
+    <script src="./assets/splide/js/splide.min.js"></script>
+    <link
+      href="./twOutput.css"
+      rel="stylesheet" />
+    <script
+      src="./script.js"
+      defer></script>
+  </head>
+  <body class="flex flex-col min-h-[200lvh]">
+    <header
+      class="py-2 bg-gradient-to-b from-black/60 to-black/0 fixed top-0 w-full z-40 transition-transform duration-300 ease-in-out">
+      <div class="container mx-auto flex flex-wrap justify-between w-full">
+        <div class="logoWrapper">
+          <img
+            src="./assets/images/PBSLogo.svg"
+            alt="" />
+        </div>
+        <div
+          class="hidden menuWrapper md:flex gap-4 content-center items-center">
+          <a
+            class="menu-item active content-center px-4 py-2 h-max text-white"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="about.html"
+            >About</a
+          >
+          <div class="relative group">
+            <a
+              class="menu-item content-center px-4 py-2 h-max text-white cursor-pointer"
+              href="services.html"
+              >Services</a
+            >
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 1</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 2</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 3</a
+              >
+            </div>
+          </div>
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="contact-us.html"
+            >Contact</a
+          >
+          <img
+            src="./assets/images/ndis.svg"
+            alt="" />
+        </div>
+        <button
+          id="hamburgerButton"
+          class="md:hidden text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div
+      id="mobileMenu"
+      class="fixed top-0 left-0 w-64 h-full flex flex-col bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+      <div class="p-4">
+        <button
+          id="closeButton"
+          class="text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4">
+        <a
+          href="index.html"
+          class="py-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="py-2"
+          >About</a
+        >
+        <div class="relative group py-2">
+          <a
+            href="services.html"
+            class="py-2 dropdown"
+            >Services</a
+          >
+          <div
+            class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 1</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 2</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 3</a
+            >
+          </div>
+        </div>
+        <a
+          href="contact-us.html"
+          class="py-2"
+          >Contact</a
+        >
+      </nav>
+      <img
+        src="./assets/images/ndis.svg"
+        alt=""
+        class="p-4 max-w-32 mt-auto" />
+    </div>
+    <script defer>
+      const hamburgerButton = document.getElementById('hamburgerButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeButton = document.getElementById('closeButton');
+      const overlay = document.getElementById('overlay');
+
+      hamburgerButton.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+      });
+
+      closeButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      });
+
+      overlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      });
+    </script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownMenu = dropdown.nextElementSibling;
+
+        dropdown.addEventListener('click', function (event) {
+          event.preventDefault();
+          dropdownMenu.classList.toggle('opacity-0');
+          dropdownMenu.classList.toggle('opacity-100');
+        });
+
+        document.addEventListener('click', function (event) {
+          if (
+            !dropdown.contains(event.target) &&
+            !dropdownMenu.contains(event.target)
+          ) {
+            dropdownMenu.classList.add('opacity-0');
+            dropdownMenu.classList.remove('opacity-100');
+          }
+        });
+      });
+    </script>
+    <main class="grow">
+      <section class="banner min-h-[100vh] bg-secondary bg-opacity-60 grid">
+        <div class="bannerMedia absolute h-full w-full object-cover">
+          <img
+            src="./assets/images/banner1.png"
+            class="absolute h-full w-full object-cover" />
+        </div>
+        <div
+          class="container z-[1] text-white mx-auto relative h-full align-bottom self-end content-end row-span-full mt-auto">
+          <div class="py-24">
+            <h1 class="banner-heading">
+              We are Passionate, Believing in Transforming Lives Every Day
+            </h1>
+            <p class="text-lg md:text-2xl my-6">
+              Empowering individuals with tailored NDIS support to lead
+              independent, fulfilling lives.
+            </p>
+            <a
+              href="#"
+              class="btn px-4 py-2 bg-primary text-white rounded-lg block max-w-max">
+              Get Started</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="whoWeAre">
+        <div class="container py-12 md:py-24 gap-4 mx-auto grid md:grid-cols-2">
+          <div class="grid-item">
+            <small
+              class="uppercase tracking-[0.75em] text-sm md:text-base text-primary font-bold"
+              >About Us</small
+            >
+            <h1 class="h1">Who We Are</h1>
+          </div>
+          <div class="grid-item text-gray-800 space-y-6 text-lg">
+            <p>
+              At Passion Believe Support, we are committed to improving the
+              lives of individuals by offering tailored care under the National
+              Disability Insurance Scheme (NDIS). Located in Adeliade,
+              Australia, our goal is to deliver exceptional support that
+              empowers participants to lead independent, meaningful lives.
+            </p>
+            <p>
+              Whether you require help with everyday tasks, navigating life
+              transitions, or engaging in community activities, our experienced
+              team of healthcare professionals is committed to supporting you in
+              achieving greater independence and improving your quality of life.
+            </p>
+            <a
+              href="#"
+              class="border bg-transparent border-black text-gray-800 px-4 py-2 rounded-lg block max-w-max"
+              title="Learn More About Us">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="whatSeparatesUs bgGrad relative min-h-[100vh]">
+        <img
+          src="./assets/images/Lotus.svg"
+          alt=""
+          class="absolute h-[80%] left-0 bottom-0 invisible md:visible" />
+        <div class="container text-white py-12 md:py-24">
+          <div class="headingWrapper">
+            <small
+              class="uppercase tracking-[0.75em] text-sm md:text-base font-bold">
+              Why Choose Us
+            </small>
+            <h1 class="h1">What Sets Us Apart</h1>
+          </div>
+          <div
+            class="contentWrapper md:pl-40 mt-12 grid-500 gap-12 md:gap-y-24">
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/personalizedCare.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Personalized Care
+              </h2>
+              <p class="text-base md:text-lg">
+                We take the time to understand your unique needs and
+                preferences, ensuring you receive tailored support.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/experiencedTeam.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Experienced Team
+              </h2>
+              <p class="text-base md:text-lg">
+                Our skilled professionals are dedicated to providing
+                high-quality care with empathy and respect.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/communityFocus.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Community Focus
+              </h2>
+              <p class="text-base md:text-lg">
+                We are committed to helping you build and maintain strong
+                connections within your community.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/holisticApproach.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Holistic Approach
+              </h2>
+              <p class="text-base md:text-lg">
+                Our services address various aspects of your life, promoting
+                overall well-being and independence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ourServices">
+        <div class="container py-12 md:py-24">
+          <div class="headingWrapper">
+            <small
+              class="uppercase tracking-[0.75em] text-sm md:text-base text-primary font-bold"
+              >Our Services</small
+            >
+            <h1 class="h1">Our Area of Specialization</h1>
+            <div
+              class="serviceGrid grid-410 gap-x-6 gap-y-12 place-items-center mt-12">
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="serviceCard">
+                <a
+                  href="#"
+                  class="contents">
+                  <div
+                    class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                    <img
+                      src="./assets/images/ServiceImg1.png"
+                      class="h-full w-full object-cover absolute"
+                      alt="" />
+                  </div>
+                  <div class="txtWrapper text-center">
+                    <h2 class="h2 font-semibold mt-6 mb-4">
+                      Accomodation / Tenancy
+                    </h2>
+                    <p class="text-base md:text-lg">
+                      We offer comprehensive support to help you find and
+                      maintain suitable accommodation.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="clientTestimonial bgGradDarker relative">
+        <img
+          src="./assets/images/testimonialQuotes.png"
+          alt=""
+          class="absolute right-0 top-0"
+          style="height: 20vh; width: auto; aspect-ratio: 1" />
+
+        <div class="container py-12 md:py-24">
+          <div class="headingWrapper text-white mb-12">
+            <small
+              class="uppercase tracking-[0.75em] text-sm md:text-base font-bold"
+              >Testimonials</small
+            >
+            <h1 class="h1">What Our Clients Say</h1>
+          </div>
+
+          <div class="splide testimonialSlider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="testimonial">
+                    <p class="testimonial-text grow">
+                      I am incredibly grateful for the outstanding care and
+                      support provided by PBS Services. Their team has been a
+                      true blessing in my life. From the moment I contacted
+                      them, they were professional, compassionate, and dedicated
+                      to understanding my unique needs.
+                    </p>
+                    <div class="flex gap-2 content-center items-center mt-4">
+                      <img
+                        src="./assets/images/person.png"
+                        class="aspect-square rounded-full max-w-12"
+                        alt="" />- John Doe
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="testimonial">
+                    <p class="testimonial-text">
+                      "The team at PBS is incredibly caring and professional."
+                    </p>
+                    <p class="testimonial-author">- Jane Smith</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="testimonial">
+                    <p class="testimonial-text">
+                      "I highly recommend PBS for anyone seeking quality
+                      support."
+                    </p>
+                    <p class="testimonial-author">- Michael Brown</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="testimonial">
+                    <p class="testimonial-text grow">
+                      I am incredibly grateful for the outstanding care and
+                      support provided by PBS Services. Their team has been a
+                      true blessing in my life. From the moment I contacted
+                      them, they were professional, compassionate, and dedicated
+                      to understanding my unique needs.
+                    </p>
+                    <div class="flex gap-2 content-center items-center mt-4">
+                      <img
+                        src="./assets/images/person.png"
+                        class="aspect-square rounded-full max-w-12"
+                        alt="" />- John Doe
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="testimonial">
+                    <p class="testimonial-text grow">
+                      I am incredibly grateful for the outstanding care and
+                      support provided by PBS Services. Their team has been a
+                      true blessing in my life. From the moment I contacted
+                      them, they were professional, compassionate, and dedicated
+                      to understanding my unique needs.
+                    </p>
+                    <div class="flex gap-2 content-center items-center mt-4">
+                      <img
+                        src="./assets/images/person.png"
+                        class="aspect-square rounded-full max-w-12"
+                        alt="" />- John Doe
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <img
+                  src="./assets/images/splideArrow.svg"
+                  alt="" />
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <img
+                  src="./assets/images/splideArrow.svg"
+                  class="-scale-x-100"
+                  alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="getInTouch relative">
+        <div
+          class="bannerMedia primaryTint absolute h-full w-full object-cover -z-10">
+          <img
+            src="./assets/images/contactbg.png"
+            class="absolute h-full w-full object-cover object-right-bottom" />
+        </div>
+        <div class="container py-12 md:py-24">
+          <div class="headingWrapper text-white mb-12">
+            <small
+              class="uppercase tracking-[0.75em] text-primary text-sm md:text-base font-bold"
+              >Contact</small
+            >
+            <h1 class="h1">Get In Touch</h1>
+          </div>
+          <div class="contactForm py-8 rounded-lg">
+            <form
+              action="#"
+              method="POST"
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 accent-secondary">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  class="w-full px-4 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-400"
+                  required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  class="w-full px-4 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-400"
+                  required />
+              </div>
+              <div class="form-group col-span-1 md:col-span-2">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  class="w-full px-4 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-400"
+                  required />
+              </div>
+              <div class="form-group col-span-1 md:col-span-2">
+                <input
+                  type="tel"
+                  id="contactNo"
+                  name="contactNo"
+                  placeholder="Contact No"
+                  class="w-full px-4 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-400"
+                  required />
+              </div>
+              <div class="form-group col-span-1 md:col-span-2">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="8"
+                  placeholder="Message"
+                  class="w-full px-4 py-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-400"
+                  required></textarea>
+              </div>
+              <div class="form-group col-span-1 md:col-span-2 max-w-max">
+                <button
+                  type="submit"
+                  class="w-full px-8 py-2 bg-primary text-white rounded-xl">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-footerGray text-white">
+      <div class="container mx-auto mt-12 md:mt-24">
+        <div class="topFooter">
+          <div class="logoGrid footerGrid grid gap-4">
+            <img
+              src="./assets/images/PBSLogo.svg"
+              alt=""
+              class="filter brightness-0 invert" />
+            <strong class="h2">Registered NIDS Provider</strong>
+            <img
+              src="./assets/images/ndis.svg"
+              alt="" />
+          </div>
+          <div class="footerGrid grid gap-4">
+            <h2 class="h2">Quick Links</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Services</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Accomodation/Tenancy</a>
+              </li>
+              <li>
+                <a href="#">Assist-Life Stage, Transition</a>
+              </li>
+              <li>
+                <a href="#">Assist-Personal Activities</a>
+              </li>
+              <li>
+                <a href="#">Assist-Travel/Transport</a>
+              </li>
+              <li>
+                <a href="#">Innov Community Participation</a>
+              </li>
+              <li>
+                <a href="#">Household Tasks</a>
+              </li>
+              <li>
+                <a href="#">Participate Community</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Connect With Us</h2>
+            <ul class="footerLinks">
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/Phone.svg"
+                    alt="" />Accomodation/Tenancy</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/email.svg"
+                    alt="" />info@pbs.com</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/location.svg"
+                    alt="" />3891 Ranchview Dr. Richardson, California 62639</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start mt-2">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/X.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/IG.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TT.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/FB.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TH.svg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="mt-6" />
+        <div class="bottomFooter my-6 flex flex-wrap justify-between">
+          <p>Copyright © PBS 2024. All rights reserved.</p>
+          <p>Crafted by: Codeilo Solutions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

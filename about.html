@@ -1,0 +1,433 @@
+<!-- npx tailwindcss -i ./src/tailwind.css -o ./src/twOutput.css --watch -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>PBS</title>
+    <link
+      rel="icon"
+      href="./assets/images/favIcon.png"
+      type="image/png" />
+    <link
+      rel="stylesheet"
+      href="./assets/splide/css/splide.min.css" />
+    <script src="./assets/splide/js/splide.min.js"></script>
+    <link
+      href="./twOutput.css"
+      rel="stylesheet" />
+    <script
+      src="./script.js"
+      defer></script>
+  </head>
+  <body class="flex flex-col min-h-[200lvh]">
+    <header
+      class="py-2 bg-gradient-to-b from-black/60 to-black/0 fixed top-0 w-full z-40 transition-transform duration-300 ease-in-out">
+      <div class="container mx-auto flex flex-wrap justify-between w-full">
+        <div class="logoWrapper">
+          <img
+            src="./assets/images/PBSLogo.svg"
+            alt="" />
+        </div>
+        <div
+          class="hidden menuWrapper md:flex gap-4 content-center items-center">
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="menu-item active content-center px-4 py-2 h-max text-white"
+            href="about.html"
+            >About</a
+          >
+          <div class="relative group">
+            <a
+              class="menu-item content-center px-4 py-2 h-max text-white cursor-pointer"
+              href="services.html"
+              >Services</a
+            >
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 1</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 2</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 3</a
+              >
+            </div>
+          </div>
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="contact-us.html"
+            >Contact</a
+          >
+          <img
+            src="./assets/images/ndis.svg"
+            alt="" />
+        </div>
+        <button
+          id="hamburgerButton"
+          class="md:hidden text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div
+      id="mobileMenu"
+      class="fixed top-0 left-0 w-64 h-full flex flex-col bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+      <div class="p-4">
+        <button
+          id="closeButton"
+          class="text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4">
+        <a
+          href="index.html"
+          class="py-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="py-2"
+          >About</a
+        >
+        <div class="relative group py-2">
+          <a
+            href="services.html"
+            class="py-2 dropdown"
+            >Services</a
+          >
+          <div
+            class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 1</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 2</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 3</a
+            >
+          </div>
+        </div>
+        <a
+          href="contact-us.html"
+          class="py-2"
+          >Contact</a
+        >
+      </nav>
+      <img
+        src="./assets/images/ndis.svg"
+        alt=""
+        class="p-4 max-w-32 mt-auto" />
+    </div>
+    <main class="grow">
+      <section
+        class="bannerSm min-h-[50vh] bg-secondary bg-opacity-60 grid relative overflow-hidden">
+        <div class="bannerMedia absolute h-full w-full object-cover">
+          <img
+            src="./assets/images/banner2.jpeg"
+            class="absolute h-full w-full object-cover" />
+        </div>
+        <div
+          class="container z-[1] text-white mx-auto relative h-full align-bottom self-end content-end row-span-full mt-auto">
+          <div class="py-24">
+            <small class="breadCrumb">Home > About</small>
+            <h1 class="banner-heading">About PBS</h1>
+          </div>
+        </div>
+      </section>
+      <section class="aboutExpo relative overflow-hidden">
+        <div class="container py-12 md:py-24 relative">
+          <div class="txtWrapper text-base md:text-lg grid gap-4">
+            <p>
+              At Passion Believe Support, we are committed to improving the
+              lives of individuals by offering tailored care under the National
+              Disability Insurance Scheme (NDIS). Located in Adeliade,
+              Australia, our goal is to deliver exceptional support that
+              empowers participants to lead independent, meaningful lives.
+            </p>
+            <p>
+              Whether you require help with everyday tasks, navigating life
+              transitions, or engaging in community activities, our experienced
+              team of healthcare professionals is committed to supporting you in
+              achieving greater independence and improving your quality of life.
+            </p>
+          </div>
+        </div>
+        <img
+          src="./assets/images/LotusDarker.svg"
+          alt=""
+          class="absolute h-[130%] w-auto right-0 -bottom-[30%] invisible md:visible" />
+      </section>
+      <section
+        class="ourMissionVision bgGrad relative"
+        style="--backgroundUrl: url(./assets/images/banner3.png)">
+        <div class="container text-white py-12 md:py-24">
+          <div class="headingWrapper md:max-w-[80ch]">
+            <small
+              class="uppercase tracking-[0.75em] text-sm md:text-base font-bold">
+              Our Mission and Vision
+            </small>
+            <h1 class="h1">What We Stand For</h1>
+            <p class="mt-4">
+              Our mission at PBS is to empower individuals by offering tailored
+              support that meets their unique needs and goals. We believe in
+              fostering independence and enhancing the quality of life for our
+              participants through compassionate and professional care.
+            </p>
+          </div>
+          <div
+            class="contentWrapper md:pl-40 mt-12 grid-500 gap-12 md:gap-y-24">
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/personalizedCare.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Personalized Care
+              </h2>
+              <p class="text-base md:text-lg">
+                We take the time to understand your unique needs and
+                preferences, ensuring you receive tailored support.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/experiencedTeam.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Experienced Team
+              </h2>
+              <p class="text-base md:text-lg">
+                Our skilled professionals are dedicated to providing
+                high-quality care with empathy and respect.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/communityFocus.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Community Focus
+              </h2>
+              <p class="text-base md:text-lg">
+                We are committed to helping you build and maintain strong
+                connections within your community.
+              </p>
+            </div>
+
+            <div class="grid-item">
+              <div
+                class="iconWrapper bg-white content-center p-3 rounded-full max-w-max">
+                <img
+                  src="./assets/images/holisticApproach.png"
+                  alt=""
+                  class="icon" />
+              </div>
+              <h2 class="h2 text-lg md:text-2xl font-semibold">
+                Holistic Approach
+              </h2>
+              <p class="text-base md:text-lg">
+                Our services address various aspects of your life, promoting
+                overall well-being and independence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-footerGray text-white">
+      <div class="container mx-auto mt-12 md:mt-24">
+        <div class="topFooter">
+          <div class="logoGrid footerGrid grid gap-4">
+            <img
+              src="./assets/images/PBSLogo.svg"
+              alt=""
+              class="filter brightness-0 invert" />
+            <strong class="h2">Registered NIDS Provider</strong>
+            <img
+              src="./assets/images/ndis.svg"
+              alt="" />
+          </div>
+          <div class="footerGrid grid gap-4">
+            <h2 class="h2">Quick Links</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Services</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Accomodation/Tenancy</a>
+              </li>
+              <li>
+                <a href="#">Assist-Life Stage, Transition</a>
+              </li>
+              <li>
+                <a href="#">Assist-Personal Activities</a>
+              </li>
+              <li>
+                <a href="#">Assist-Travel/Transport</a>
+              </li>
+              <li>
+                <a href="#">Innov Community Participation</a>
+              </li>
+              <li>
+                <a href="#">Household Tasks</a>
+              </li>
+              <li>
+                <a href="#">Participate Community</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Connect With Us</h2>
+            <ul class="footerLinks">
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/Phone.svg"
+                    alt="" />Accomodation/Tenancy</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/email.svg"
+                    alt="" />info@pbs.com</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/location.svg"
+                    alt="" />3891 Ranchview Dr. Richardson, California 62639</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start mt-2">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/X.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/IG.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TT.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/FB.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TH.svg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="mt-6" />
+        <div class="bottomFooter my-6 flex flex-wrap justify-between">
+          <p>Copyright © PBS 2024. All rights reserved.</p>
+          <p>Crafted by: Codeilo Solutions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
