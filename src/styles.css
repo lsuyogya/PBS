@@ -1,3 +1,6 @@
+:root {
+  @apply caret-primary accent-secondary;
+}
 .bgGrad {
   background: linear-gradient(
     318.05deg,
@@ -5,6 +8,9 @@
     #52132a 72.85%,
     #380d1d 100%
   );
+}
+.bgGradDarker {
+  background: linear-gradient(316.32deg, #7c4090 -1.27%, #350c1b 105.68%);
 }
 
 .menu-item.active,
@@ -30,12 +36,27 @@
       rgba(0, 0, 0, 0.6) 100%
     );
 }
+.bannerMedia.primaryTint:after {
+  content: '';
+  @apply h-full w-full object-cover absolute;
+  height: 100%;
+  width: 100%;
+  background: #7c409033;
+}
 .banner-heading {
   font-size: clamp(32px, 5vw, 80px);
   line-height: 1.1;
 }
+.large-heading {
+  font-size: clamp(28px, 4.5vw, 64px);
+  line-height: 1.1;
+}
 .h1 {
   font-size: clamp(24px, 4.5vw, 64px);
+  line-height: 1.1;
+}
+.h2 {
+  font-size: clamp(18px, 4.5vw, 24px);
   line-height: 1.1;
 }
 .container {
@@ -60,8 +81,165 @@
 }
 .grid-410 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(410, 1fr));
-  @media (max-width: 410) {
+  grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+  @media (max-width: 410px) {
     grid-template-columns: 1fr;
+  }
+}
+
+.serviceCard {
+  max-width: min(416px, 100%);
+  .imgWrapper {
+    &:after {
+      content: '';
+      @apply absolute inset-0 bg-secondary bg-opacity-15 md:bg-opacity-30 hover:bg-opacity-5 transition-all duration-300;
+    }
+    img {
+      @apply transition scale-100 duration-200 delay-200;
+    }
+    &:hover img {
+      @apply scale-110;
+    }
+  }
+}
+
+.splide__arrows,
+.splide__arrow {
+  position: relative;
+  left: unset;
+  right: unset;
+  top: unset;
+  bottom: unset;
+  transform: unset;
+}
+.splide__arrow {
+  @apply rounded-md p-2;
+}
+.splide__arrow:not([disabled]) {
+  @apply bg-white;
+}
+.splide__arrows {
+  display: flex;
+  @apply gap-2 mt-4;
+}
+.testimonialSlider {
+  .testimonial {
+    @apply bg-white p-6 rounded-lg h-full flex flex-col;
+  }
+  .testimonial-text {
+    @apply grow line-clamp-5;
+  }
+}
+
+.getInTouch .contactForm {
+  max-width: max(400px, 50%);
+}
+
+input:not(:placeholder-shown):user-invalid {
+  border: 1px solid red;
+}
+
+.form-group:has(input:user-invalid):after {
+  content: 'Please fill out this field correctly.';
+  color: red;
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-auto-rows: max-content;
+}
+
+.footerLinks {
+  display: grid;
+  @apply gap-1 md:gap-2 text-sm md:text-base;
+}
+.contactLinks {
+  display: grid;
+  @apply gap-1 md:gap-2 text-sm md:text-base text-footerGray;
+  img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(216%)
+      hue-rotate(134deg) brightness(92%) contrast(86%);
+  }
+}
+
+.topFooter {
+  /* display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr) minmax(400px, 1fr)
+  );
+  place-content: center;
+  gap: 1rem;
+  column-gap: 1rem; */
+  display: flex;
+  row-gap: 1rem;
+  column-gap: 4rem;
+  justify-content: space-between;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  flex-wrap: wrap;
+  .h2 {
+    font-weight: 600;
+  }
+}
+.bottomFooter {
+  @apply text-sm md:text-base;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#overlay {
+  display: none;
+}
+
+#overlay.active {
+  display: block;
+}
+
+#mobileMenu.active {
+  transform: translateX(0);
+}
+
+.bannerSm .bannerMedia:after {
+  background: linear-gradient(
+      0deg,
+      rgba(124, 64, 144, 0.3),
+      rgba(124, 64, 144, 0.3)
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-blend-mode: overlay;
+}
+
+.aboutExpo .txtWrapper {
+  max-width: max(50%, 700px);
+  width: 100%;
+}
+
+.ourMissionVision {
+  background-color: white;
+  background: var(--backgroundUrl),
+    linear-gradient(
+      318.05deg,
+      #7c4090df 26.4%,
+      #52132adf 72.85%,
+      #380d1ddf 100%
+    );
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  opacity: 0.9;
+}
+
+.serviceSection {
+  img {
+    @apply h-4 w-4 mt-2;
   }
 }

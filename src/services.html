@@ -1,0 +1,481 @@
+<!-- npx tailwindcss -i ./src/tailwind.css -o ./src/twOutput.css --watch -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>PBS</title>
+    <link
+      rel="icon"
+      href="./assets/images/favIcon.png"
+      type="image/png" />
+    <link
+      rel="stylesheet"
+      href="./assets/splide/css/splide.min.css" />
+    <script src="./assets/splide/js/splide.min.js"></script>
+    <link
+      href="./twOutput.css"
+      rel="stylesheet" />
+    <script
+      src="./script.js"
+      defer></script>
+  </head>
+  <body class="flex flex-col min-h-[200lvh]">
+    <header
+      class="py-2 bg-gradient-to-b from-black/60 to-black/0 fixed top-0 w-full z-40 transition-transform duration-300 ease-in-out">
+      <div class="container mx-auto flex flex-wrap justify-between w-full">
+        <div class="logoWrapper">
+          <img
+            src="./assets/images/PBSLogo.svg"
+            alt="" />
+        </div>
+        <div
+          class="hidden menuWrapper md:flex gap-4 content-center items-center">
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="about.html"
+            >About</a
+          >
+          <div class="relative group">
+            <a
+              class="menu-item active content-center px-4 py-2 h-max text-white cursor-pointer"
+              href="services.html"
+              >Services</a
+            >
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 1</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 2</a
+              >
+              <a
+                href="service.html"
+                class="block px-4 py-2"
+                >Service 3</a
+              >
+            </div>
+          </div>
+          <a
+            class="menu-item content-center px-4 py-2 h-max text-white"
+            href="contact-us.html"
+            >Contact</a
+          >
+          <img
+            src="./assets/images/ndis.svg"
+            alt="" />
+        </div>
+        <button
+          id="hamburgerButton"
+          class="md:hidden text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div
+      id="mobileMenu"
+      class="fixed top-0 left-0 w-64 h-full flex flex-col bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+      <div class="p-4">
+        <button
+          id="closeButton"
+          class="text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4">
+        <a
+          href="index.html"
+          class="py-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="py-2"
+          >About</a
+        >
+        <div class="relative group py-2">
+          <a
+            href="services.html"
+            class="py-2 dropdown"
+            >Services</a
+          >
+          <div
+            class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 1</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 2</a
+            >
+            <a
+              href="service.html"
+              class="block px-4 py-2"
+              >Service 3</a
+            >
+          </div>
+        </div>
+        <a
+          href="contact-us.html"
+          class="py-2"
+          >Contact</a
+        >
+      </nav>
+      <img
+        src="./assets/images/ndis.svg"
+        alt=""
+        class="p-4 max-w-32 mt-auto" />
+    </div>
+    <main class="grow">
+      <section
+        class="bannerSm min-h-[50vh] bg-secondary bg-opacity-60 grid relative overflow-hidden">
+        <div class="bannerMedia absolute h-full w-full object-cover">
+          <img
+            src="./assets/images/banner4.jpeg"
+            class="absolute h-full w-full object-cover" />
+        </div>
+        <div
+          class="container z-[1] text-white mx-auto relative h-full align-bottom self-end content-end row-span-full mt-auto">
+          <div class="py-24">
+            <small class="breadCrumb">Home > Services</small>
+            <h1 class="banner-heading">Services</h1>
+          </div>
+        </div>
+      </section>
+      <section class="Services py-12 md:py-24">
+        <div class="container mx-auto">
+          <div class="serviceGrid grid-410 gap-x-6 gap-y-12 place-items-center">
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="serviceCard">
+              <a
+                href="#"
+                class="contents">
+                <div
+                  class="imgWrapper transition-all duration-300 min-h-[420px] md:min-h-[520px] overflow-clip relative rounded-[1rem] md:rounded-[200vmax] hover:rounded-[1rem]">
+                  <img
+                    src="./assets/images/ServiceImg1.png"
+                    class="h-full w-full object-cover absolute"
+                    alt="" />
+                </div>
+                <div class="txtWrapper text-center">
+                  <h2 class="h2 font-semibold mt-6 mb-4">
+                    Accomodation / Tenancy
+                  </h2>
+                  <p class="text-base md:text-lg">
+                    We offer comprehensive support to help you find and maintain
+                    suitable accommodation.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-footerGray text-white">
+      <div class="container mx-auto mt-12 md:mt-24">
+        <div class="topFooter">
+          <div class="logoGrid footerGrid grid gap-4">
+            <img
+              src="./assets/images/PBSLogo.svg"
+              alt=""
+              class="filter brightness-0 invert" />
+            <strong class="h2">Registered NIDS Provider</strong>
+            <img
+              src="./assets/images/ndis.svg"
+              alt="" />
+          </div>
+          <div class="footerGrid grid gap-4">
+            <h2 class="h2">Quick Links</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Services</h2>
+            <ul class="footerLinks">
+              <li>
+                <a href="#">Accomodation/Tenancy</a>
+              </li>
+              <li>
+                <a href="#">Assist-Life Stage, Transition</a>
+              </li>
+              <li>
+                <a href="#">Assist-Personal Activities</a>
+              </li>
+              <li>
+                <a href="#">Assist-Travel/Transport</a>
+              </li>
+              <li>
+                <a href="#">Innov Community Participation</a>
+              </li>
+              <li>
+                <a href="#">Household Tasks</a>
+              </li>
+              <li>
+                <a href="#">Participate Community</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid footerGrid gap-4">
+            <h2 class="h2">Connect With Us</h2>
+            <ul class="footerLinks">
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/Phone.svg"
+                    alt="" />Accomodation/Tenancy</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/email.svg"
+                    alt="" />info@pbs.com</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/location.svg"
+                    alt="" />3891 Ranchview Dr. Richardson, California 62639</a
+                >
+              </li>
+              <li class="flex gap-2 items-start content-start mt-2">
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/X.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/IG.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TT.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/FB.svg"
+                    alt=""
+                /></a>
+                <a
+                  href="#"
+                  class="contents">
+                  <img
+                    src="./assets/images/TH.svg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="mt-6" />
+        <div class="bottomFooter my-6 flex flex-wrap justify-between">
+          <p>Copyright © PBS 2024. All rights reserved.</p>
+          <p>Crafted by: Codeilo Solutions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

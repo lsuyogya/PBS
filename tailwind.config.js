@@ -16,6 +16,7 @@ module.exports = {
       yellow: colors.yellow,
       primary: '#ef224b',
       secondary: '#9b51b4',
+      footerGray: '#3a3a3a',
     },
   },
   safelist: ['menu-item', 'active'],
