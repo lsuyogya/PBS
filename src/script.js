@@ -46,27 +46,29 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Mobile Menu
-const hamburgerButton = document.getElementById('hamburgerButton');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeButton = document.getElementById('closeButton');
-const overlay = document.getElementById('overlay');
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerButton = document.getElementById('hamburgerButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeButton = document.getElementById('closeButton');
+  const overlay = document.getElementById('overlay');
 
-hamburgerButton.addEventListener('click', () => {
-  mobileMenu.classList.add('active');
-  overlay.classList.add('active');
-  document.body.classList.add('modal-open');
-});
+  hamburgerButton.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('modal-open');
+  });
 
-closeButton.addEventListener('click', () => {
-  mobileMenu.classList.remove('active');
-  overlay.classList.remove('active');
-  document.body.classList.remove('modal-open');
-});
+  closeButton.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  });
 
-overlay.addEventListener('click', () => {
-  mobileMenu.classList.remove('active');
-  overlay.classList.remove('active');
-  document.body.classList.remove('modal-open');
+  overlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
